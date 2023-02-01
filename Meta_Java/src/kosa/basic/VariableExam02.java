@@ -13,6 +13,14 @@ public class VariableExam02 {
 
 		//2. 선언된 변수는 정의된 범위 안에서만 사용할 수 있다.
 		//지역변수는 선언된 위치가 중요
-	}
+		int a = 0;
+		System.out.println(a);
+		if(num == 1) {
+			a = 100;
+			System.out.println(a);
+		}
+		
+		
+	}	
 
 }
