@@ -3,8 +3,7 @@
 package kosa.book2;
 
 public class Main {
-	BookInfo bif = new BookInfo();
-
+	
 	public static void main(String[] args) {
 		int allPrice = 0;
 		int dc_totalPrice = 0;
