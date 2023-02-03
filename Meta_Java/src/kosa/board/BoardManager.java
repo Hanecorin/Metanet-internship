@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class BoardManager {
 	Board arr[] = new Board[10]; //게시판 객체 생성
+	Reply rp = new Reply();
+	Reply r[] = new Reply[10];
 	static Scanner sc = new Scanner(System.in);
 	int count;
 	
@@ -22,7 +24,23 @@ public class BoardManager {
 		System.out.println("글내용: ");
 		String bContent = sc.nextLine();
 		
-		arr[count++] = new Board(bNo, bHead, bName, bContent); // 배열안에 폰인포 객체를 추가
+		arr[count++] = new Board(bNo, bHead, bName, bContent, rp); // 배열안에 폰인포 객체를 추가
+	}
+	
+	public void replyAdd() { // 댓글달기
+		
+		System.out.println("댓글 번호: ");
+		int rNo = sc.nextInt();
+		
+		sc.nextLine(); // 에러방지용
+		
+		System.out.println("댓글 작성자: ");
+		String rName = sc.nextLine();
+		
+		System.out.println("댓글 내용: ");
+		String rContent = sc.nextLine();
+		
+		r[count++] = new Reply(rNo, rName, rContent); // 리플 배열안에
 	}
 	
 	public void boardList() {// 글 목록 보기

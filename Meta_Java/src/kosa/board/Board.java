@@ -9,16 +9,18 @@ public class Board {
 	private String bHead;
 	private String bName;
 	private String bContent;
+	private Reply reply;
 
 	public Board() {
 	}
 
-	public Board(int bNo, String bHead, String bName, String bContent) {
+	public Board(int bNo, String bHead, String bName, String bContent, Reply reply) {
 		super();
 		this.bNo = bNo;
 		this.bHead = bHead;
 		this.bName = bName;
 		this.bContent = bContent;
+		this.reply = reply;
 	}
 
 	public int getbNo() {
@@ -52,15 +54,26 @@ public class Board {
 	public void setbContent(String bContent) {
 		this.bContent = bContent;
 	}
+	
+	public Reply getReply() {
+		return reply;
+	}
+
+	public void setReply(Reply reply) {
+		this.reply = reply;
+	}
 
 	public void show() { // 글 정보
 		System.out.println("글번호: " + bNo);
 		System.out.println("제목: " + bHead);
 		System.out.println("작성자: " + bName);
 		System.out.println("글내용: " + bContent);
+		System.out.println("댓글번호: " + reply.getrNo());
+		System.out.println("댓글 작성자: " + reply.getrName());
+		System.out.println("댓글 내용: " + reply.getrContent());
 	}
 
-	public void list() { // 글 목록 보려고
+	public void list() { // 글 목록
 		System.out.println("글번호: " + bNo + " 제목: " + bHead);
 		System.out.println("=================================");
 	}
