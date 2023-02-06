@@ -1,0 +1,103 @@
+1. 객체를 추출
+2. 객체간의 관계
+
+	
+	
+	1. 주제: 수강신청 로직을 구현하자. (kosa.course)
+	
+		1단계
+			여러 과목(Course)들이 개설되어야 한다.
+			학생(Student)이 과목을 여러번 수강신청할 수 있다.
+			학생은 수강된 과목을 확인할 수 있다.
+			과목은 과목이름의 내용을 갖고 있다.
+			
+		2단계
+			학생은 수강신청한 과목을 취소 할 수 있다.
+			과목마다 수강신청한 확생 목록을 확인할 수 있다.
+
+		(과제)	
+		회원이 물품을 주문할 수 있다.
+		회원이 주문한 물품들을 출력할 수 있다.
+		
+		
+	Super 키워드
+	
+		-super는 부모 클래스를 의미합니다
+		-상속관계의 자식클래스에서 부모클래스의 속성을 참조하거나 메소드를 호출하고자 할 때 super키워드를 사용합니다.
+		-생성자 역시 메소드이므로 super 키워드를 사용하여 부모클래스의 생성자를 호출할 수 있습니다. 
+		
+		
+	overriding
+		- 상속받은 클래스를 재정의 해서 사용하는것?
+		- 자식 클래스에서 부모 클래스의 메소드와 동일한 시그니쳐
+		(메소드 이름, 리턴 타입, 매개변수의 개수/ 자료형/순서)를 적용하여야 한다.
+		
+	
+
+	
+	PhoneInfo 확장
+		- Company(dept,position)
+		- Universe(major, year)
+		
+	1. 추가
+		1.일반 2.회사 3.동창
+		
+	2. 출력
+		1.전체 2.회사 3.동창 (instance of 
+						true false로 알아보면 될듯)
+						
+						
+						
+	추상클래스 왜씀?
+	
+	추상이란
+	 - 여러 가지 사물이나 개념으로부터 공통이 되는 특성을 파악하는 것을 말한다.
+	 
+	 * 코드의 일관성, 코드의 독립성 때문에 사용함 (인터페이스도 같음)
+	 
+	  
+	
+	BoardService
+		-> insertBoard(){
+		dao.insrt();
+		}
+		
+	OracleDao -> insert()
+	MySQLDao -> insert()
+		
+		
+	class Work extends Man implements Speakable -- 4
+	- speak(){getName + "열심히 일해야 한다."}
+	
+	class Student extends Man -- 5
+	- speak(){getName + "공부나 열심히해."} //Student클래스의 speak는 오
+	
+	main() -- 6
+	Object ojb[] = {new Reader("둘리"), new Work("길동"),
+					new Student("마이콜")};
+					
+	speak() -> 호출결과 -> Student를 제외한 Reader와 Work만 출력
+		
+		
+		
+		
+-수강신청 예제 -> 객체간의 관계
+
+상속, 오버라이딩 
+-> MinusAccount
+-> PhoneInfo
+
+
+추상클래스, 인터페이스 => 코드의 독립성, 일관성 보장
+-> Role
+-> Dao
+
+내부클래스, 람다식 => 코드를 간결하게 구현
+		
+		
+과제 우선순위
+1. 주문관리 과제
+2. 문자열과제 (API관련)
+3. 야구게임 -> 객체설계
+
+정규표현식, Collection, Stream
