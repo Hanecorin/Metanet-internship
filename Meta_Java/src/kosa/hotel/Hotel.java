@@ -139,7 +139,7 @@ public class Hotel {
 	}
 
 	// 노쇼 삭제
-	public void noShow() {
+	public void noShow() {//#
 		reservation.clear();
 	}
 
