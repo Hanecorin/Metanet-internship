@@ -16,7 +16,7 @@ public class Main {
 			
 			switch (menu) {
 			case"1":
-				System.out.println("1.추가등록안함 2.추가등록");
+//				System.out.println("1.추가등록안함 2.추가등록");
 				System.out.println("추가메뉴:1.일반 2.회사 3.동창 ");
 				String menu2 = sc.nextLine();
 				switch (menu2) {
@@ -50,7 +50,7 @@ public class Main {
 				break;
 				
 			case"3":
-				m.search();
+//				m.search();
 				break;
 				
 			case"4":

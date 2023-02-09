@@ -14,7 +14,7 @@ public class Mission1_3 {
 		String[] arr = input.split(" ");
 		String answer = "";
 		// 가장 작은 값으로 초기화
-		int m = Integer.MIN_VALUE;
+		int m = 0;
 
 		for (String x : arr) {
 			// 문자열의 길이 저장

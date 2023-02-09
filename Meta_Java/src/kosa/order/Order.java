@@ -6,18 +6,17 @@ public class Order {
 	private Item item;
 	private int quantity;
 	private int amount;
-	
-	public Order () {}
-	
-	
-	
-	public Order(int orderNo, Member member, Item item, int quantity, int amount) {
+
+	public Order() {
+	}
+
+	public Order(int orderNo, Member member, Item item, int quantity) {
 		super();
 		this.orderNo = orderNo;
 		this.member = member;
 		this.item = item;
 		this.quantity = quantity;
-		this.amount = amount;
+		this.amount = item.getPrice()*quantity;
 	}
 
 	public int getOrderNo() {
@@ -59,15 +58,15 @@ public class Order {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
+
 	public void show() {
 		System.out.println("주문번호 : " + orderNo);
 		System.out.println("회원이름 : " + member.getName());
 		System.out.println("회원주소 : " + member.getAddress());
 		System.out.println("주문한 상품 모델명 : " + item.getItem());
-		System.out.println("주문한 상품 가격 : " + item.getPrice()+"원");
-		System.out.println("주문수량 : " + quantity+"개");
-		System.out.println("주문금액 : " + amount+"원");
+		System.out.println("주문한 상품 가격 : " + item.getPrice() + "원");
+		System.out.println("주문수량 : " + quantity + "개");
+		System.out.println("주문금액 : " + amount + "원");
 	}
-	
+
 }

@@ -1,9 +1,13 @@
 package kosa.phone;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class Manager {
-	PhoneInfo arr[] = new PhoneInfo[10]; // 폰인포 객체 10개 생성
+//	PhoneInfo arr[] = new PhoneInfo[10]; // 폰인포 객체 10개 생성
+	List<PhoneInfo> arr = new ArrayList<PhoneInfo>();
 	static Scanner sc = new Scanner(System.in);
 
 	int count;
@@ -18,7 +22,7 @@ public class Manager {
 		System.out.println("생년월일: ");
 		String birth = sc.nextLine();
 
-		arr[count++] = new PhoneInfo(name, phoneNo, birth); // 배열안에 폰인포 객체를 추가
+		arr.add(new PhoneInfo(name, phoneNo, birth)); // 배열안에 폰인포 객체를 추가
 	}
 
 	public void cadd() {
@@ -37,7 +41,7 @@ public class Manager {
 		System.out.println("직급: ");
 		String position = sc.nextLine();
 
-		arr[count++] = new Company(name, phoneNo, birth, dept, position); // 배열안에 폰인포 객체를 추가
+		arr.add(new Company(name, phoneNo, birth, dept, position)); // 배열안에 폰인포 객체를 추가
 	}
 
 	public void uadd() {
@@ -56,49 +60,55 @@ public class Manager {
 		System.out.println("학년: ");
 		String year = sc.nextLine();
 
-		arr[count++] = new Universe(name, phoneNo, birth, major, year); // 배열안에 폰인포 객체를 추가
+		arr.add(new Universe(name, phoneNo, birth, major, year)); // 배열안에 폰인포 객체를 추가
 	}
 
+	Iterator<PhoneInfo> iterator = arr.iterator();
+
 	public void listPhoneInfo() { // 전체 출력
-		for (int i = 0; i < count; i++) {
-			arr[i].show();
+
+		for (PhoneInfo a : arr) {
+			a.show();
 		}
 	}
 
 	public void listPhoneInfoCompany() { // 전체 출력
-		for (int i = 0; i < count; i++) {
-			if (arr[i] instanceof Company) {
-				arr[i].show();
+		while (iterator.hasNext()) {
+			PhoneInfo str = iterator.next();
+			if (str instanceof Company) {
+				str.show();
 			}
-
+			
 		}
 	}
+
 
 	public void listPhoneInfoUniverse() { // 전체 출력
-		for (int i = 0; i < count; i++) {
-			if (arr[i] instanceof Universe) {
-				arr[i].show();
+		while (iterator.hasNext()) {
+			PhoneInfo str = iterator.next();
+			if (str instanceof Universe) {
+				System.out.println(str);
 			}
-
+			
 		}
 	}
 
-	public void search() { // 검색
-		System.out.println("검색이름: ");
-		String name = sc.nextLine();
-		int idx = -1;
-
-		for (int i = 0; i < count; i++) {
-			if (name.equals(arr[i].getName())) {
-				idx = i;
-			}
-		}
-		if (idx == -1) {
-			System.out.printf("해당 이름은 존재하지 않습니다.");
-		} else {
-			System.out.println((idx + 1) + "번째 있습니다.");
-			arr[idx].show();
-		}
-	}
-
+//	public void search() { // 검색
+//		System.out.println("검색이름: ");
+//		String name = sc.nextLine();
+//		int idx = -1;
+//
+//		for (int i = 0; i < count; i++) {
+//			if (name.equals(arr[i].getName())) {
+//				idx = i;
+//			}
+//		}
+//		if (idx == -1) {
+//			System.out.printf("해당 이름은 존재하지 않습니다.");
+//		} else {
+//			System.out.println((idx + 1) + "번째 있습니다.");
+//			arr[idx].show();
+//		}
+//	}
+//
 }

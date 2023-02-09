@@ -7,8 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Member member1 = new Member("한예찬","안양");
-		Item item1 = new Item("갤럭시23",100);
-		Order order1 = new Order(1,member1,item1,10,1000);
+		Item item1 = new Item("갤럭시23",1234);
+		Order order1 = new Order(1,member1,item1,10);
 		
 		
 		
